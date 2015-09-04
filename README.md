@@ -2,6 +2,7 @@
 An Easy Way to Intergate Scrolling Header
 
 [![Cocoapods](http://img.shields.io/cocoapods/v/MHScrollingHeader.svg?style=flat)](http://www.cocoapods.org/?q=mhscrollingheader)
+[![Join the chat at https://gitter.im/MickeyHub/MHScrollingHeader](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MickeyHub/MHScrollingHeader)
 
 A custom Category for UIViewController to enable the scrolling of the header alongside the
 scrolling of an observed content view.
