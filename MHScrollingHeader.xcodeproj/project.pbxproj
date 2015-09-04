@@ -13,6 +13,7 @@
 		047D98891B9916D9005794D3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047D987F1B9916D9005794D3 /* Info.plist */; };
 		047D988A1B9916D9005794D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D98801B9916D9005794D3 /* main.m */; };
 		047D988C1B9916D9005794D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D98841B9916D9005794D3 /* ViewController.m */; };
+		04D8991D1B99BF4C00C1ED22 /* Screenshot.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04D8991C1B99BF4C00C1ED22 /* Screenshot.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		047D98831B9916D9005794D3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		047D98841B9916D9005794D3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		04BC47731B97372E005F8B7E /* MHScrollingHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHScrollingHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D8991C1B99BF4C00C1ED22 /* Screenshot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Screenshot.gif; sourceTree = "<group>"; };
 		45C6BF10D88376F1C1E0E58C /* libPods-OffsetDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OffsetDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C83360960D9FCDCF2EE9B0C8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -53,6 +55,7 @@
 		047D98771B9916D9005794D3 /* MHScrollHeader */ = {
 			isa = PBXGroup;
 			children = (
+				04D8991B1B99BF4C00C1ED22 /* assets */,
 				046E71301B9932850094BCBD /* ScrollingHeader */,
 				047D98781B9916D9005794D3 /* AppDelegate.h */,
 				047D98791B9916D9005794D3 /* AppDelegate.m */,
@@ -80,6 +83,14 @@
 				04BC47731B97372E005F8B7E /* MHScrollingHeader.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		04D8991B1B99BF4C00C1ED22 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				04D8991C1B99BF4C00C1ED22 /* Screenshot.gif */,
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 		CB8E858A3B56CEC8542F7ED0 /* Frameworks */ = {
@@ -149,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				047D98891B9916D9005794D3 /* Info.plist in Resources */,
+				04D8991D1B99BF4C00C1ED22 /* Screenshot.gif in Resources */,
 				047D98881B9916D9005794D3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
