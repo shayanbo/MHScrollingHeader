@@ -24,17 +24,37 @@
     
     UILabel* headerLabel = [UILabel new];
     {
-        headerLabel.translatesAutoresizingMaskIntoConstraints = NO;
         headerLabel.text = @"I'm Scrolling Header";
-        headerLabel.font = [UIFont boldSystemFontOfSize:20];
-        headerLabel.textColor = [UIColor whiteColor];
-        headerLabel.textAlignment = NSTextAlignmentCenter;
         headerLabel.backgroundColor = [UIColor blueColor];
+        [self configLabel:headerLabel];
         [self.view addSubview:headerLabel];
+        
         self.topConstraint = [NSLayoutConstraint constraintWithItem:headerLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:headerLabel.superview attribute:NSLayoutAttributeTop multiplier:1.0f constant:0];
         [self.view addConstraint:self.topConstraint];
         [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[headerLabel]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(headerLabel)]];
         [headerLabel addConstraint:[NSLayoutConstraint constraintWithItem:headerLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:200]];
+        
+        {
+            UILabel* leftLabel = [UILabel new];
+            {
+                [self configLabel:leftLabel];
+                leftLabel.text = @"Menu";
+                [headerLabel addSubview:leftLabel];
+            }
+            
+            UILabel* rightLabel = [UILabel new];
+            {
+                [self configLabel:rightLabel];
+                rightLabel.text = @"More";
+                [headerLabel addSubview:rightLabel];
+            }
+            
+            //set al
+            {
+                [headerLabel addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[leftLabel][rightLabel(leftLabel)]|" options:NSLayoutFormatAlignAllBottom metrics:nil views:NSDictionaryOfVariableBindings(leftLabel, rightLabel)]];
+                [headerLabel addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(150)-[leftLabel(rightLabel)]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(leftLabel, rightLabel)]];
+            }
+        }
     }
     
     UITableView* tableView = [UITableView new];
@@ -76,6 +96,15 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     [self mh_headerScroll];
+}
+
+#pragma mark - Private
+-(void) configLabel:(UILabel*)label{
+    
+    label.translatesAutoresizingMaskIntoConstraints = NO;
+    label.font = [UIFont boldSystemFontOfSize:20];
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
 }
 
 @end
