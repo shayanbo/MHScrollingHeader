@@ -19,6 +19,10 @@ scrolling of an observed content view.
 pod 'MHScrollingHeader', '~> 0.0.1'
 use_frameworks!
 ```
+# Manually from GitHub
+1. Download the source files in the [MHScrollHeader subdirectory](MHScrollHeader/MHScrollingHeader).
+1. Add the source files to your Xcode project.
+1. Import the `UIViewController+MHScrollingHeader.h` header.
 
 ##Usage
 
