@@ -16,15 +16,30 @@
  */
 -(void) mh_followScrollView:(UIScrollView*)scrollView withOffset:(CGFloat)offset forTopConstraint:(NSLayoutConstraint*)topConstraint{
     
+    [self mh_followScrollViews:@[scrollView] withOffset:offset forTopConstraint:topConstraint];
+}
+
+-(void) mh_followScrollViews:(NSArray*)scrollViews withOffset:(CGFloat)offset forTopConstraint:(NSLayoutConstraint*)topConstraint{
+    
+    //shared data
     self.topConstraint = topConstraint;
-    self.scrollView = scrollView;
     self.offset = offset;
     self.topConstraintConstant = topConstraint.constant;
-    self.lastContentOffsetY = -offset;
     
-    scrollView.contentOffset = CGPointMake(0, -offset);
-    scrollView.contentInset = UIEdgeInsetsMake(offset, 0, 0, 0);
-    scrollView.scrollIndicatorInsets = scrollView.contentInset;
+    //check scrollviews type
+    NSParameterAssert(scrollViews);
+    [scrollViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSParameterAssert([obj isKindOfClass:[UIScrollView class]]);
+    }];
+    
+    self.scrollViews = scrollViews;
+    [scrollViews enumerateObjectsUsingBlock:^(UIScrollView* scrollView, NSUInteger idx, BOOL *stop) {
+        
+        [self setLastContentOffsetY:-offset forScrollView:scrollView];
+        scrollView.contentOffset = CGPointMake(0, -offset);
+        scrollView.contentInset = UIEdgeInsetsMake(offset, 0, 0, 0);
+        scrollView.scrollIndicatorInsets = scrollView.contentInset;
+    }];
 }
 
 /*
@@ -33,7 +48,18 @@
 -(void) mh_headerScroll{
     
     //get contentoffset y
-    CGFloat contentOffsetY = self.scrollView.contentOffset.y;
+    [self.scrollViews enumerateObjectsUsingBlock:^(UIScrollView* scrollView, NSUInteger idx, BOOL *stop) {
+        if (scrollView.tracking) {
+            self.activeScrollView = scrollView;
+            *stop = YES;
+        }
+    }];
+    
+    if (!self.activeScrollView) {
+        return;
+    }
+    
+    CGFloat contentOffsetY = self.activeScrollView.contentOffset.y;
     
     //scroll direction
     BOOL scrollUp = contentOffsetY - self.lastContentOffsetY > 0;
@@ -66,28 +92,43 @@
 }
 
 #pragma mark Getter & Setter
--(void)setTopConstraint:(NSLayoutConstraint*) constraint{objc_setAssociatedObject(self, @selector(topConstraint), constraint, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 
+//will called at initial method `mh_followScrollView...`
+-(void)setLastContentOffsetY:(CGFloat)lastContentOffsetY forScrollView:(UIScrollView*)scrollView{
+    
+    NSMutableDictionary* lastOffsetGroup = objc_getAssociatedObject(self, &lastContentOffsetYKey);
+    if (!lastOffsetGroup) {
+        lastOffsetGroup = [NSMutableDictionary dictionary];
+        objc_setAssociatedObject(self, &lastContentOffsetYKey, lastOffsetGroup, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    
+    [lastOffsetGroup setObject:@(lastContentOffsetY) forKey:@(scrollView.hash)];
+}
+
+static char lastContentOffsetYKey;
+-(CGFloat) lastContentOffsetY{
+    NSMutableDictionary* lastOffsetGroup = objc_getAssociatedObject(self, &lastContentOffsetYKey);
+    return [[lastOffsetGroup objectForKey:@(self.activeScrollView.hash)] floatValue];
+}
+
+-(void) setLastContentOffsetY:(CGFloat)contentOffsetY{
+    NSMutableDictionary* lastOffsetGroup = objc_getAssociatedObject(self, &lastContentOffsetYKey);
+    [lastOffsetGroup setObject:@(contentOffsetY) forKey:@(self.activeScrollView.hash)];
+}
+
+-(void)setTopConstraint:(NSLayoutConstraint*) constraint{objc_setAssociatedObject(self, @selector(topConstraint), constraint, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 -(NSLayoutConstraint*)topConstraint{return objc_getAssociatedObject(self, @selector(topConstraint));}
 
--(void)setScrollView:(UIScrollView*)scrollView{objc_setAssociatedObject(self, @selector(scrollView), scrollView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
+-(void)setActiveScrollView:(UIScrollView*)scrollView{objc_setAssociatedObject(self, @selector(activeScrollView), scrollView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
+-(UIScrollView*)activeScrollView{return objc_getAssociatedObject(self, @selector(activeScrollView));}
 
--(UIScrollView*)scrollView{return objc_getAssociatedObject(self, @selector(scrollView));}
+-(void)setScrollViews:(NSArray*)scrollViews{objc_setAssociatedObject(self, @selector(scrollViews), scrollViews, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
+-(NSArray*)scrollViews{return objc_getAssociatedObject(self, @selector(scrollViews));}
 
 -(void)setOffset:(CGFloat)offset{objc_setAssociatedObject(self, @selector(offset), @(offset), OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
-
 -(CGFloat)offset{return [objc_getAssociatedObject(self, @selector(offset)) floatValue];}
 
--(CGFloat) lastContentOffsetY{return [objc_getAssociatedObject(self, @selector(lastContentOffsetY)) floatValue];}
-
--(void)setLastContentOffsetY:(CGFloat)lastContentOffsetY{objc_setAssociatedObject(self, @selector(lastContentOffsetY), @(lastContentOffsetY), OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
-
--(CGFloat)topConstraintConstant{
-    return [objc_getAssociatedObject(self, @selector(topConstraintConstant)) floatValue];
-}
-
--(void) setTopConstraintConstant:(CGFloat)constant{
-    objc_setAssociatedObject(self, @selector(topConstraintConstant), @(constant), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
+-(CGFloat)topConstraintConstant{return [objc_getAssociatedObject(self, @selector(topConstraintConstant)) floatValue];}
+-(void) setTopConstraintConstant:(CGFloat)constant{objc_setAssociatedObject(self, @selector(topConstraintConstant), @(constant), OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 
 @end
