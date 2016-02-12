@@ -1,9 +1,9 @@
 # MHScrollingHeader
 An Easy Way to Intergate Scrolling Header
 
-[![Cocoapods](http://img.shields.io/cocoapods/v/MHScrollingHeader.svg?style=flat)](http://www.cocoapods.org/?q=mhscrollingheader)
-[![Cocoapods](http://img.shields.io/cocoapods/l/MHScrollingHeader.svg?style=flat)](http://www.cocoapods.org/?q=mhscrollingheader)
-[![Cocoapods](http://img.shields.io/cocoapods/p/MHScrollingHeader.svg?style=flat)](http://www.cocoapods.org/?q=mhscrollingheader)
+[![CocoaPods](http://img.shields.io/cocoapods/v/MHScrollingHeader.svg?style=flat)](http://www.cocoapods.org/?q=mhscrollingheader)
+[![CocoaPods](http://img.shields.io/cocoapods/l/MHScrollingHeader.svg?style=flat)](http://www.cocoapods.org/?q=mhscrollingheader)
+[![CocoaPods](http://img.shields.io/cocoapods/p/MHScrollingHeader.svg?style=flat)](http://www.cocoapods.org/?q=mhscrollingheader)
 [![Join the chat at https://gitter.im/MickeyHub/MHScrollingHeader](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MickeyHub/MHScrollingHeader)
 [![Contact](https://img.shields.io/badge/contact-Mickey-green.svg)](http://weibo.com/u/2194071594)
 
@@ -14,7 +14,7 @@ scrolling of an observed content view.
 
 ![MHScrollingHeader](https://raw.githubusercontent.com/MickeyHub/MHScrollingHeader/master/MHScrollHeader/assets/Screenshot.gif)
 
-#Setup with Cocoapods
+#Setup with CocoaPods
 
 ```
 pod 'MHScrollingHeader', '~> 0.0.1'
