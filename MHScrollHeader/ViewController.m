@@ -7,22 +7,22 @@
 //
 
 #import "ViewController.h"
-#import "UIViewController+MHScrollingHeader.h"
+#import "MHScrollingHeader-Swift.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) NSLayoutConstraint* topConstraint;
-@property (nonatomic, weak) UITableView* tableView;
+@property (nonatomic, strong) NSLayoutConstraint *topConstraint;
+@property (nonatomic, weak) UITableView *tableView;
 
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
-
+    
     self.view.backgroundColor = [UIColor grayColor];
     
-    UILabel* headerLabel = [UILabel new];
+    UILabel *headerLabel = [UILabel new];
     {
         headerLabel.text = @"I'm Scrolling Header";
         headerLabel.backgroundColor = [UIColor blueColor];
@@ -35,14 +35,14 @@
         [headerLabel addConstraint:[NSLayoutConstraint constraintWithItem:headerLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:200]];
         
         {
-            UILabel* leftLabel = [UILabel new];
+            UILabel *leftLabel = [UILabel new];
             {
                 [self configLabel:leftLabel];
                 leftLabel.text = @"Menu";
                 [headerLabel addSubview:leftLabel];
             }
             
-            UILabel* rightLabel = [UILabel new];
+            UILabel *rightLabel = [UILabel new];
             {
                 [self configLabel:rightLabel];
                 rightLabel.text = @"More";
@@ -57,7 +57,7 @@
         }
     }
     
-    UITableView* tableView = [UITableView new];
+    UITableView *tableView = [UITableView new];
     {
         tableView.translatesAutoresizingMaskIntoConstraints = NO;
         tableView.delegate = self;
@@ -69,16 +69,16 @@
         
         {
             [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tableView)]];
-            [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[tableView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tableView)]];
+            [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tableView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tableView)]];
         }
     }
-
-    [self mh_followScrollView:tableView withOffset:136 forTopConstraint:self.topConstraint];
+    
+    [self scrollHeaderSetup:@[tableView] contentOffset:200 topConstraint:self.topConstraint flexibleViewHeight:40];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
@@ -89,17 +89,13 @@
     return cell;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return 100;
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [self mh_headerScroll];
-}
-
 #pragma mark - Private
--(void) configLabel:(UILabel*)label{
+- (void)configLabel:(UILabel *)label {
     
     label.translatesAutoresizingMaskIntoConstraints = NO;
     label.font = [UIFont boldSystemFontOfSize:20];

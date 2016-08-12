@@ -7,18 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		046E71331B9932850094BCBD /* UIViewController+MHScrollingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E71321B9932850094BCBD /* UIViewController+MHScrollingHeader.m */; };
 		047D98851B9916D9005794D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D98791B9916D9005794D3 /* AppDelegate.m */; };
 		047D98881B9916D9005794D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047D987E1B9916D9005794D3 /* Images.xcassets */; };
-		047D98891B9916D9005794D3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047D987F1B9916D9005794D3 /* Info.plist */; };
 		047D988A1B9916D9005794D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D98801B9916D9005794D3 /* main.m */; };
 		047D988C1B9916D9005794D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D98841B9916D9005794D3 /* ViewController.m */; };
+		04D1A97A15120D6BA0DA0B1E /* Pods_MHScrollingHeader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13454451544B77437E72B9A3 /* Pods_MHScrollingHeader.framework */; };
 		04D8991D1B99BF4C00C1ED22 /* Screenshot.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04D8991C1B99BF4C00C1ED22 /* Screenshot.gif */; };
+		D4AE6C6A1D5DB3DD006B13AA /* MHScrollingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE6C691D5DB3DD006B13AA /* MHScrollingHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		046E71311B9932850094BCBD /* UIViewController+MHScrollingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MHScrollingHeader.h"; sourceTree = "<group>"; };
-		046E71321B9932850094BCBD /* UIViewController+MHScrollingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MHScrollingHeader.m"; sourceTree = "<group>"; };
 		047D98781B9916D9005794D3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		047D98791B9916D9005794D3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		047D987E1B9916D9005794D3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -28,8 +26,11 @@
 		047D98841B9916D9005794D3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		04BC47731B97372E005F8B7E /* MHScrollingHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHScrollingHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D8991C1B99BF4C00C1ED22 /* Screenshot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Screenshot.gif; sourceTree = "<group>"; };
-		45C6BF10D88376F1C1E0E58C /* libPods-OffsetDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OffsetDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C83360960D9FCDCF2EE9B0C8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13454451544B77437E72B9A3 /* Pods_MHScrollingHeader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHScrollingHeader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A75122145E6C268365A80893 /* Pods-MHScrollingHeader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHScrollingHeader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHScrollingHeader/Pods-MHScrollingHeader.debug.xcconfig"; sourceTree = "<group>"; };
+		A7D07FBE247FC8DFBFDBB4F5 /* Pods-MHScrollingHeader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHScrollingHeader.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHScrollingHeader/Pods-MHScrollingHeader.release.xcconfig"; sourceTree = "<group>"; };
+		D4AE6C681D5DB3DD006B13AA /* MHScrollingHeader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MHScrollingHeader-Bridging-Header.h"; sourceTree = "<group>"; };
+		D4AE6C691D5DB3DD006B13AA /* MHScrollingHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHScrollingHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D1A97A15120D6BA0DA0B1E /* Pods_MHScrollingHeader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,8 +48,8 @@
 		046E71301B9932850094BCBD /* ScrollingHeader */ = {
 			isa = PBXGroup;
 			children = (
-				046E71311B9932850094BCBD /* UIViewController+MHScrollingHeader.h */,
-				046E71321B9932850094BCBD /* UIViewController+MHScrollingHeader.m */,
+				D4AE6C691D5DB3DD006B13AA /* MHScrollingHeader.swift */,
+				D4AE6C681D5DB3DD006B13AA /* MHScrollingHeader-Bridging-Header.h */,
 			);
 			path = ScrollingHeader;
 			sourceTree = "<group>";
@@ -74,6 +76,7 @@
 				047D98771B9916D9005794D3 /* MHScrollHeader */,
 				04BC47741B97372E005F8B7E /* Products */,
 				CB8E858A3B56CEC8542F7ED0 /* Frameworks */,
+				35C909CC905216CA42EE4636 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,11 +96,19 @@
 			path = assets;
 			sourceTree = "<group>";
 		};
+		35C909CC905216CA42EE4636 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A75122145E6C268365A80893 /* Pods-MHScrollingHeader.debug.xcconfig */,
+				A7D07FBE247FC8DFBFDBB4F5 /* Pods-MHScrollingHeader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CB8E858A3B56CEC8542F7ED0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				45C6BF10D88376F1C1E0E58C /* libPods-OffsetDemo.a */,
-				C83360960D9FCDCF2EE9B0C8 /* Pods.framework */,
+				13454451544B77437E72B9A3 /* Pods_MHScrollingHeader.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04BC47961B97372E005F8B7E /* Build configuration list for PBXNativeTarget "MHScrollingHeader" */;
 			buildPhases = (
+				DF332A6F4DFCF6E5730B47BE /* [CP] Check Pods Manifest.lock */,
 				04BC476F1B97372E005F8B7E /* Sources */,
 				04BC47701B97372E005F8B7E /* Frameworks */,
 				04BC47711B97372E005F8B7E /* Resources */,
+				AB4EDAD0081FF8378F553763 /* [CP] Embed Pods Frameworks */,
+				E73F895A8C0D753DDB56C0BC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,7 +142,8 @@
 		04BC476B1B97372E005F8B7E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = mx;
 				TargetAttributes = {
 					04BC47721B97372E005F8B7E = {
@@ -159,7 +174,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047D98891B9916D9005794D3 /* Info.plist in Resources */,
 				04D8991D1B99BF4C00C1ED22 /* Screenshot.gif in Resources */,
 				047D98881B9916D9005794D3 /* Images.xcassets in Resources */,
 			);
@@ -167,15 +181,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AB4EDAD0081FF8378F553763 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MHScrollingHeader/Pods-MHScrollingHeader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF332A6F4DFCF6E5730B47BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E73F895A8C0D753DDB56C0BC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MHScrollingHeader/Pods-MHScrollingHeader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04BC476F1B97372E005F8B7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				047D988A1B9916D9005794D3 /* main.m in Sources */,
+				D4AE6C6A1D5DB3DD006B13AA /* MHScrollingHeader.swift in Sources */,
 				047D988C1B9916D9005794D3 /* ViewController.m in Sources */,
 				047D98851B9916D9005794D3 /* AppDelegate.m in Sources */,
-				046E71331B9932850094BCBD /* UIViewController+MHScrollingHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +265,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -264,21 +327,34 @@
 		};
 		04BC47971B97372E005F8B7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A75122145E6C268365A80893 /* Pods-MHScrollingHeader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/MHScrollHeader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.itcast.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MHScrollingHeader;
+				SWIFT_OBJC_BRIDGING_HEADER = "MHScrollHeader/ScrollingHeader/MHScrollingHeader-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		04BC47981B97372E005F8B7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7D07FBE247FC8DFBFDBB4F5 /* Pods-MHScrollingHeader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/MHScrollHeader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.itcast.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MHScrollingHeader;
+				SWIFT_OBJC_BRIDGING_HEADER = "MHScrollHeader/ScrollingHeader/MHScrollingHeader-Bridging-Header.h";
 			};
 			name = Release;
 		};
