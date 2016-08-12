@@ -1,3 +1,7 @@
+# Apollon
+.env.sh
+Gemfile.lock
+
 # Xcode
 #
 build/
@@ -23,4 +27,14 @@ DerivedData
 # you should judge for yourself, the pros and cons are mentioned at:
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
-#Pods/
+Pods/
+
+# OS X
+.DS_Store
+
+# AppCode
+.idea/
+
+# fastlane
+.fastlane/report.xml
+.fastlane/*.md
