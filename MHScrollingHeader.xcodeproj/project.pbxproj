@@ -335,7 +335,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/MHScrollHeader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.itcast.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mickeysha.MHScrollingHeader;
 				PRODUCT_NAME = MHScrollingHeader;
 				SWIFT_OBJC_BRIDGING_HEADER = "MHScrollHeader/ScrollingHeader/MHScrollingHeader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -352,7 +352,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/MHScrollHeader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.itcast.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mickeysha.MHScrollingHeader;
 				PRODUCT_NAME = MHScrollingHeader;
 				SWIFT_OBJC_BRIDGING_HEADER = "MHScrollHeader/ScrollingHeader/MHScrollingHeader-Bridging-Header.h";
 			};
