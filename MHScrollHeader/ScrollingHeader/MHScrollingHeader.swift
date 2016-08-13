@@ -40,7 +40,7 @@ public extension UIViewController {
                 options: [.Old, .New],
                 block:
             { (_, _, _) in
-                self.scroll()
+                self.scroll(scrollView)
             })
             mObservers = observers
         }
@@ -49,22 +49,8 @@ public extension UIViewController {
 
 private extension UIViewController {
     
-    func scroll() {
+    func scroll(activeScrollView: UIScrollView) {
         
-        guard let activeScrollView = { () -> UIScrollView? in
-            let scrollViews = mScrollViews as NSArray
-            let predicate = NSPredicate(format: "%K == %@", "tracking", true)
-            let filteredScrollViews = scrollViews.filteredArrayUsingPredicate(predicate)
-            if filteredScrollViews.count == 0 {
-                return nil
-            } else {
-                // CONFUSE as
-                return filteredScrollViews[0] as? UIScrollView
-            }
-        }() else {
-            return
-        }
-
         let currentContentOffsetY = activeScrollView.contentOffset.y
         let delta = currentContentOffsetY - mLastContentOffset
         let scrollUp = delta > 0
