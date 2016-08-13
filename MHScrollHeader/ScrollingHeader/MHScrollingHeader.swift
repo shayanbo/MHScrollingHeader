@@ -72,13 +72,21 @@ private extension UIViewController {
             if mTopConstraint.constant <= -(mContentOffset - mFlexibleViewHeight) {
                 mTopConstraint.constant = -(mContentOffset - mFlexibleViewHeight)
             } else {
-                mTopConstraint.constant -= delta
+                if mTopConstraint.constant - delta <= -(mContentOffset - mFlexibleViewHeight) {
+                    mTopConstraint.constant = -(mContentOffset - mFlexibleViewHeight)
+                } else {
+                    mTopConstraint.constant -= delta
+                }
             }
         } else {
             if mTopConstraint.constant >= 0 {
                 mTopConstraint.constant = 0
             } else {
-                mTopConstraint.constant -= delta
+                if mTopConstraint.constant - delta >= 0 {
+                    mTopConstraint.constant = 0
+                } else {
+                    mTopConstraint.constant -= delta
+                }
             }
         }
         mLastContentOffset = currentContentOffsetY
