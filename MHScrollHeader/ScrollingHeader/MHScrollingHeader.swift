@@ -52,6 +52,12 @@ private extension UIViewController {
     func scroll(activeScrollView: UIScrollView) {
         
         let currentContentOffsetY = activeScrollView.contentOffset.y
+        
+        if currentContentOffsetY < -mContentOffset ||
+            currentContentOffsetY + CGRectGetHeight(activeScrollView.frame) > activeScrollView.contentSize.height {
+            return
+        }
+        
         let delta = currentContentOffsetY - mLastContentOffset
         let scrollUp = delta > 0
         if scrollUp {
