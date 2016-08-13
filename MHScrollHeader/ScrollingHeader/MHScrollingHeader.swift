@@ -24,13 +24,14 @@ public extension UIViewController {
         mContentOffset = contentOffset
         mTopConstraint = topConstraint
         mFlexibleViewHeight = flexibleViewHeight
-        mLastContentOffset = -contentOffset
         
         var observers: [FBKVOController] = []
+        var lastContentOffsets: [UIScrollView: CGFloat] = [:]
         for scrollView in scrollViews {
             scrollView.contentInset = UIEdgeInsetsMake(contentOffset, 0, 0, 0)
             scrollView.scrollIndicatorInsets = scrollView.contentInset
             scrollView.contentOffset = CGPointMake(0, -contentOffset)
+            lastContentOffsets[scrollView] = -contentOffset
             
             let observer = FBKVOController(observer: self)
             observers.append(observer)
@@ -40,17 +41,24 @@ public extension UIViewController {
                 options: [.Old, .New],
                 block:
             { [unowned self] (_, _, _) in
-                self.scroll(scrollView)
+                
+                if scrollView.tracking {
+                    self.mActiveScrollView = scrollView
+                }
+                if scrollView === self.mActiveScrollView {
+                    self.scroll(self.mActiveScrollView)
+                }
             })
-            mObservers = observers
         }
+        mObservers = observers
+        mLastContentOffsets = lastContentOffsets
     }
 }
 
 private extension UIViewController {
     
     func scroll(activeScrollView: UIScrollView) {
-        
+    
         let currentContentOffsetY = activeScrollView.contentOffset.y
         
         if currentContentOffsetY < -mContentOffset ||
@@ -58,22 +66,37 @@ private extension UIViewController {
             return
         }
         
-        let delta = currentContentOffsetY - mLastContentOffset
+        let delta = currentContentOffsetY - mLastContentOffsets[activeScrollView]!
         let scrollUp = delta > 0
         if scrollUp {
             if mTopConstraint.constant - delta <= -(mContentOffset - mFlexibleViewHeight) {
                 mTopConstraint.constant = -(mContentOffset - mFlexibleViewHeight)
             } else {
                 mTopConstraint.constant -= delta
+                adjustOtherScrollViews(activeScrollView)
             }
         } else {
             if mTopConstraint.constant - delta >= 0 {
                 mTopConstraint.constant = 0
             } else {
                 mTopConstraint.constant -= delta
+                adjustOtherScrollViews(activeScrollView)
             }
         }
-        mLastContentOffset = currentContentOffsetY
+        mLastContentOffsets[activeScrollView] = currentContentOffsetY
+    }
+    
+    func adjustOtherScrollViews(activeScrollView: UIScrollView) {
+
+        let index = mScrollViews.indexOf(activeScrollView)!
+        mScrollViews.removeAtIndex(index)
+        mScrollViews.insert(activeScrollView, atIndex: 0)
+        let scrollViews = mScrollViews.dropFirst()
+        for scrollView in scrollViews {
+            let delta = activeScrollView.contentOffset.y - mLastContentOffsets[activeScrollView]!
+            mLastContentOffsets[scrollView] = mLastContentOffsets[scrollView]! + delta
+            scrollView.contentOffset = CGPointMake(0, mLastContentOffsets[scrollView]!)
+        }
     }
 }
 
@@ -83,6 +106,7 @@ private var scrollViewsPointer = NSNull()
 private var contentOffsetPointer = NSNull()
 private var flexibleViewHeightPointer = NSNull()
 private var lastContentOffsetPointer = NSNull()
+private var activeScrollViewPointer = NSNull()
 private var observersPointer = NSNull()
 
 private extension UIViewController {
@@ -102,6 +126,11 @@ private extension UIViewController {
         set{objc_setAssociatedObject(self, &scrollViewsPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
     }
     
+    var mActiveScrollView: UIScrollView! {
+        get{return objc_getAssociatedObject(self, &activeScrollViewPointer) as? UIScrollView}
+        set{objc_setAssociatedObject(self, &activeScrollViewPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
+    }
+    
     var mContentOffset: CGFloat! {
         get{return objc_getAssociatedObject(self, &contentOffsetPointer) as? CGFloat}
         set{objc_setAssociatedObject(self, &contentOffsetPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
@@ -112,8 +141,8 @@ private extension UIViewController {
         set{objc_setAssociatedObject(self, &flexibleViewHeightPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
     }
     
-    var mLastContentOffset: CGFloat! {
-        get{return objc_getAssociatedObject(self, &lastContentOffsetPointer) as? CGFloat}
+    var mLastContentOffsets: [UIScrollView: CGFloat]! {
+        get{return objc_getAssociatedObject(self, &lastContentOffsetPointer) as? [UIScrollView: CGFloat]}
         set{objc_setAssociatedObject(self, &lastContentOffsetPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
     }
 }
