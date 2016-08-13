@@ -69,24 +69,16 @@ private extension UIViewController {
         let delta = currentContentOffsetY - mLastContentOffset
         let scrollUp = delta > 0
         if scrollUp {
-            if mTopConstraint.constant <= -(mContentOffset - mFlexibleViewHeight) {
+            if mTopConstraint.constant - delta <= -(mContentOffset - mFlexibleViewHeight) {
                 mTopConstraint.constant = -(mContentOffset - mFlexibleViewHeight)
             } else {
-                if mTopConstraint.constant - delta <= -(mContentOffset - mFlexibleViewHeight) {
-                    mTopConstraint.constant = -(mContentOffset - mFlexibleViewHeight)
-                } else {
-                    mTopConstraint.constant -= delta
-                }
+                mTopConstraint.constant -= delta
             }
         } else {
-            if mTopConstraint.constant >= 0 {
+            if mTopConstraint.constant - delta >= 0 {
                 mTopConstraint.constant = 0
             } else {
-                if mTopConstraint.constant - delta >= 0 {
-                    mTopConstraint.constant = 0
-                } else {
-                    mTopConstraint.constant -= delta
-                }
+                mTopConstraint.constant -= delta
             }
         }
         mLastContentOffset = currentContentOffsetY
