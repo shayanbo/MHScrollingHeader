@@ -47,7 +47,7 @@ public extension UIViewController {
     }
 }
 
-public extension UIViewController {
+private extension UIViewController {
     
     func scroll() {
         
