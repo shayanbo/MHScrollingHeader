@@ -12,7 +12,8 @@
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSLayoutConstraint *topConstraint;
-@property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, weak) UITableView *tableView1;
+@property (nonatomic, weak) UITableView *tableView2;
 
 @end
 
@@ -22,10 +23,11 @@
     
     self.view.backgroundColor = [UIColor grayColor];
     
-    UILabel *headerLabel = [UILabel new];
+    UIButton *headerLabel = [UIButton new];
     {
-        headerLabel.text = @"I'm Scrolling Header";
+        [headerLabel setTitle:@"I'm Scrolling Header" forState:UIControlStateNormal];
         headerLabel.backgroundColor = [UIColor blueColor];
+        headerLabel.userInteractionEnabled = YES;
         [self configLabel:headerLabel];
         [self.view addSubview:headerLabel];
         
@@ -35,45 +37,75 @@
         [headerLabel addConstraint:[NSLayoutConstraint constraintWithItem:headerLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:200]];
         
         {
-            UILabel *leftLabel = [UILabel new];
+            UIButton *leftLabel = [UIButton new];
             {
                 [self configLabel:leftLabel];
-                leftLabel.text = @"Menu";
+                [leftLabel setTitle:@"Menu" forState:UIControlStateNormal];
+                [leftLabel addTarget:self action:@selector(menu) forControlEvents:UIControlEventTouchUpInside];
+                leftLabel.backgroundColor = [UIColor orangeColor];
                 [headerLabel addSubview:leftLabel];
             }
             
-            UILabel *rightLabel = [UILabel new];
+            UIButton *rightLabel = [UIButton new];
             {
                 [self configLabel:rightLabel];
-                rightLabel.text = @"More";
+                [rightLabel setTitle:@"More" forState:UIControlStateNormal];
+                [rightLabel addTarget:self action:@selector(more) forControlEvents:UIControlEventTouchUpInside];
+                rightLabel.backgroundColor = [UIColor brownColor];
                 [headerLabel addSubview:rightLabel];
             }
             
             //set al
             {
                 [headerLabel addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[leftLabel][rightLabel(leftLabel)]|" options:NSLayoutFormatAlignAllBottom metrics:nil views:NSDictionaryOfVariableBindings(leftLabel, rightLabel)]];
-                [headerLabel addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(150)-[leftLabel(rightLabel)]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(leftLabel, rightLabel)]];
+                [headerLabel addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(160)-[leftLabel(rightLabel)]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(leftLabel, rightLabel)]];
             }
         }
     }
     
-    UITableView *tableView = [UITableView new];
+    UITableView *tableView1 = [UITableView new];
     {
-        tableView.translatesAutoresizingMaskIntoConstraints = NO;
-        tableView.delegate = self;
-        tableView.dataSource = self;
-        tableView.tableFooterView = [UIView new];
-        tableView.backgroundColor = [UIColor purpleColor];
-        self.tableView = tableView;
-        [self.view insertSubview:tableView belowSubview:headerLabel];
+        tableView1.translatesAutoresizingMaskIntoConstraints = NO;
+        tableView1.delegate = self;
+        tableView1.dataSource = self;
+        tableView1.tableFooterView = [UIView new];
+        tableView1.backgroundColor = [UIColor purpleColor];
+        self.tableView1 = tableView1;
+        [self.view insertSubview:tableView1 belowSubview:headerLabel];
         
         {
-            [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tableView)]];
-            [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tableView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tableView)]];
+            [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView1]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tableView1)]];
+            [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tableView1]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tableView1)]];
         }
     }
     
-    [self scrollHeaderSetup:@[tableView] contentOffset:200 topConstraint:self.topConstraint flexibleViewHeight:40];
+    UITableView *tableView2 = [UITableView new];
+    {
+        tableView2.translatesAutoresizingMaskIntoConstraints = NO;
+        tableView2.delegate = self;
+        tableView2.dataSource = self;
+        tableView2.tableFooterView = [UIView new];
+        tableView2.backgroundColor = [UIColor purpleColor];
+        self.tableView2 = tableView2;
+        [self.view insertSubview:tableView2 belowSubview:headerLabel];
+        
+        {
+            [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView2]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tableView2)]];
+            [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tableView2]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tableView2)]];
+        }
+    }
+    
+    [self scrollHeaderSetup:@[tableView1, tableView2] contentOffset:200 topConstraint:self.topConstraint flexibleViewHeight:40];
+}
+
+- (void)more {
+    self.tableView1.hidden = true;
+    self.tableView2.hidden = false;
+}
+
+- (void)menu {
+    self.tableView1.hidden = false;
+    self.tableView2.hidden = true;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -84,7 +116,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    cell.textLabel.text = @"Scrolling Header";
+    cell.textLabel.text = @"I'm Cell";
     
     return cell;
 }
@@ -95,12 +127,12 @@
 }
 
 #pragma mark - Private
-- (void)configLabel:(UILabel *)label {
+- (void)configLabel:(UIButton *)label {
     
     label.translatesAutoresizingMaskIntoConstraints = NO;
-    label.font = [UIFont boldSystemFontOfSize:20];
-    label.textColor = [UIColor whiteColor];
-    label.textAlignment = NSTextAlignmentCenter;
+    label.titleLabel.font = [UIFont boldSystemFontOfSize:20];
+    label.titleLabel.textColor = [UIColor whiteColor];
+    label.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 
 @end
