@@ -39,7 +39,7 @@ public extension UIViewController {
                 keyPath: "contentOffset",
                 options: [.Old, .New],
                 block:
-            { (_, _, _) in
+            { [unowned self] (_, _, _) in
                 self.scroll(scrollView)
             })
             mObservers = observers
