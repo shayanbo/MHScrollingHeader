@@ -17,38 +17,31 @@ scrolling of an observed content view.
 #Setup with CocoaPods
 
 ```
-pod 'MHScrollingHeader', '~> 0.0.1'
+pod 'MHScrollingHeader', '~> 1.0.0'
 use_frameworks!
 ```
 # Manually from GitHub
 1. Download the source files in the [MHScrollHeader subdirectory](MHScrollHeader/MHScrollingHeader).
-1. Add the source files to your Xcode project.
-1. Import the `UIViewController+MHScrollingHeader.h` header.
+2. Add the one and only one swift file to your Xcode project.
 
 ##Usage
 
 Make sure to use AutoLayout for your App UI.
 
-Use `mh_followScrollView :withOffset :forTopConstraint` to start following the scrolling of a scrollable view (e.g.: a `UIScrollView` or `UITableView`).
+Just use `scrollHeaderSetup(_:contentOffset:topConstraint:flexibleViewHeight:)` to start following the scrolling of a scrollable view (e.g.: a `UIScrollView` or `UITableView`).
+
+Example->OC: 
 
 ```objc
 - (void)viewDidLoad {
-    [self mh_followScrollView:tableView withOffset:136 forTopConstraint:self.topConstraint];
-}
-```
-
-You need call `mh_headerScroll` method in scrollview's callback `scrollViewDidScroll:scrollView` to follow scroll action
-
-```objc
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [self mh_headerScroll];
+    [self scrollHeaderSetup:@[tableView1, tableView2] contentOffset:200 topConstraint:self.topConstraint flexibleViewHeight:40];
 }
 ```
 
 Check out the sample project for more details.
 
 #Author
-[MickeyHub](http://weibo.com/u/2194071594)
+[MickeyHub](https://about.me/MickeySha)
 
 #MIT License
     The MIT License (MIT)
