@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { "MickeySha" => "yanbo.sha@gmail.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/MickeyHub/MHScrollingHeader.git", :tag => "v#{s.version}" }
-  s.source_files  = "MHScrollHeader/ScrollingHeader/*.swift"
+  s.source_files  = "ScrollingHeader/MHScrollingHeader.swift"
   s.requires_arc = true
   s.dependency 'KVOController', '~> 1.1.0'
 

@@ -7,73 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		047D98851B9916D9005794D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D98791B9916D9005794D3 /* AppDelegate.m */; };
-		047D98881B9916D9005794D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047D987E1B9916D9005794D3 /* Images.xcassets */; };
-		047D988A1B9916D9005794D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D98801B9916D9005794D3 /* main.m */; };
-		047D988C1B9916D9005794D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D98841B9916D9005794D3 /* ViewController.m */; };
-		04D1A97A15120D6BA0DA0B1E /* Pods_MHScrollingHeader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13454451544B77437E72B9A3 /* Pods_MHScrollingHeader.framework */; };
-		04D8991D1B99BF4C00C1ED22 /* Screenshot.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04D8991C1B99BF4C00C1ED22 /* Screenshot.gif */; };
-		D4AE6C6A1D5DB3DD006B13AA /* MHScrollingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE6C691D5DB3DD006B13AA /* MHScrollingHeader.swift */; };
+		39EB2686E1D6E3BB60DAA60C /* Pods_ScrollingHeader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909A6DEB749710C2A9D249A3 /* Pods_ScrollingHeader.framework */; };
+		D10991B5173433ACB2C11DCF /* Pods_ScrollingHeaderDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0661E1D4C968E3DF09954089 /* Pods_ScrollingHeaderDemo.framework */; };
+		D446C4981D65B993006A1B9C /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C4971D65B993006A1B9C /* MineViewController.swift */; };
+		D446C4A11D65BC92006A1B9C /* ScrollingHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = D446C4A01D65BC92006A1B9C /* ScrollingHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D446C4AC1D65BEDB006A1B9C /* MHScrollingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C4AB1D65BEDB006A1B9C /* MHScrollingHeader.swift */; };
+		D446C4AE1D65C6E5006A1B9C /* BeltBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C4AD1D65C6E5006A1B9C /* BeltBar.swift */; };
+		D446C4B01D65D215006A1B9C /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C4AF1D65D215006A1B9C /* PhotosViewController.swift */; };
+		D446C4B21D65D27B006A1B9C /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C4B11D65D27B006A1B9C /* StatusViewController.swift */; };
+		D446C4B41D65D507006A1B9C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C4B31D65D507006A1B9C /* ProfileView.swift */; };
+		D48DE4571D65ABDB0074F6AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48DE4561D65ABDB0074F6AE /* AppDelegate.swift */; };
+		D48DE4591D65ABDB0074F6AE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48DE4581D65ABDB0074F6AE /* RootViewController.swift */; };
+		D48DE45E1D65ABDB0074F6AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48DE45D1D65ABDB0074F6AE /* Assets.xcassets */; };
+		D48DE4611D65ABDB0074F6AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48DE45F1D65ABDB0074F6AE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		047D98781B9916D9005794D3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		047D98791B9916D9005794D3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		047D987E1B9916D9005794D3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		047D987F1B9916D9005794D3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		047D98801B9916D9005794D3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		047D98831B9916D9005794D3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		047D98841B9916D9005794D3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		04BC47731B97372E005F8B7E /* MHScrollingHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHScrollingHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04D8991C1B99BF4C00C1ED22 /* Screenshot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Screenshot.gif; sourceTree = "<group>"; };
-		13454451544B77437E72B9A3 /* Pods_MHScrollingHeader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHScrollingHeader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A75122145E6C268365A80893 /* Pods-MHScrollingHeader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHScrollingHeader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHScrollingHeader/Pods-MHScrollingHeader.debug.xcconfig"; sourceTree = "<group>"; };
-		A7D07FBE247FC8DFBFDBB4F5 /* Pods-MHScrollingHeader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHScrollingHeader.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHScrollingHeader/Pods-MHScrollingHeader.release.xcconfig"; sourceTree = "<group>"; };
-		D4AE6C681D5DB3DD006B13AA /* MHScrollingHeader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MHScrollingHeader-Bridging-Header.h"; sourceTree = "<group>"; };
-		D4AE6C691D5DB3DD006B13AA /* MHScrollingHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHScrollingHeader.swift; sourceTree = "<group>"; };
+		0661E1D4C968E3DF09954089 /* Pods_ScrollingHeaderDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrollingHeaderDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		184E5F2054AC027E31C9CEBA /* Pods-ScrollingHeaderDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollingHeaderDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollingHeaderDemo/Pods-ScrollingHeaderDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		388F9BEA6CFB345D5C40A06C /* Pods-ScrollingHeader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollingHeader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollingHeader/Pods-ScrollingHeader.debug.xcconfig"; sourceTree = "<group>"; };
+		909A6DEB749710C2A9D249A3 /* Pods_ScrollingHeader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrollingHeader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		911F20A2E7830F76BAAFB2A6 /* Pods-ScrollingHeader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollingHeader.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollingHeader/Pods-ScrollingHeader.release.xcconfig"; sourceTree = "<group>"; };
+		D446C4971D65B993006A1B9C /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		D446C49E1D65BC91006A1B9C /* ScrollingHeader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScrollingHeader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D446C4A01D65BC92006A1B9C /* ScrollingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollingHeader.h; sourceTree = "<group>"; };
+		D446C4A21D65BC92006A1B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D446C4AB1D65BEDB006A1B9C /* MHScrollingHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHScrollingHeader.swift; sourceTree = "<group>"; };
+		D446C4AD1D65C6E5006A1B9C /* BeltBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeltBar.swift; sourceTree = "<group>"; };
+		D446C4AF1D65D215006A1B9C /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		D446C4B11D65D27B006A1B9C /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		D446C4B31D65D507006A1B9C /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D48DE4541D65ABDB0074F6AE /* ScrollingHeaderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollingHeaderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48DE4561D65ABDB0074F6AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D48DE4581D65ABDB0074F6AE /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		D48DE45D1D65ABDB0074F6AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D48DE4601D65ABDB0074F6AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D48DE4621D65ABDB0074F6AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAA68688B45C305A3FC5C3BA /* Pods-ScrollingHeaderDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollingHeaderDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollingHeaderDemo/Pods-ScrollingHeaderDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		04BC47701B97372E005F8B7E /* Frameworks */ = {
+		D446C49A1D65BC91006A1B9C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D1A97A15120D6BA0DA0B1E /* Pods_MHScrollingHeader.framework in Frameworks */,
+				39EB2686E1D6E3BB60DAA60C /* Pods_ScrollingHeader.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D48DE4511D65ABDB0074F6AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D10991B5173433ACB2C11DCF /* Pods_ScrollingHeaderDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		046E71301B9932850094BCBD /* ScrollingHeader */ = {
-			isa = PBXGroup;
-			children = (
-				D4AE6C691D5DB3DD006B13AA /* MHScrollingHeader.swift */,
-				D4AE6C681D5DB3DD006B13AA /* MHScrollingHeader-Bridging-Header.h */,
-			);
-			path = ScrollingHeader;
-			sourceTree = "<group>";
-		};
-		047D98771B9916D9005794D3 /* MHScrollHeader */ = {
-			isa = PBXGroup;
-			children = (
-				04D8991B1B99BF4C00C1ED22 /* assets */,
-				046E71301B9932850094BCBD /* ScrollingHeader */,
-				047D98781B9916D9005794D3 /* AppDelegate.h */,
-				047D98791B9916D9005794D3 /* AppDelegate.m */,
-				047D987E1B9916D9005794D3 /* Images.xcassets */,
-				047D987F1B9916D9005794D3 /* Info.plist */,
-				047D98801B9916D9005794D3 /* main.m */,
-				047D98831B9916D9005794D3 /* ViewController.h */,
-				047D98841B9916D9005794D3 /* ViewController.m */,
-			);
-			path = MHScrollHeader;
-			sourceTree = "<group>";
-		};
 		04BC476A1B97372E005F8B7E = {
 			isa = PBXGroup;
 			children = (
-				047D98771B9916D9005794D3 /* MHScrollHeader */,
+				D48DE4551D65ABDB0074F6AE /* ScrollingHeaderDemo */,
+				D446C49F1D65BC92006A1B9C /* ScrollingHeader */,
 				04BC47741B97372E005F8B7E /* Products */,
 				CB8E858A3B56CEC8542F7ED0 /* Frameworks */,
 				35C909CC905216CA42EE4636 /* Pods */,
@@ -83,24 +80,19 @@
 		04BC47741B97372E005F8B7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04BC47731B97372E005F8B7E /* MHScrollingHeader.app */,
+				D48DE4541D65ABDB0074F6AE /* ScrollingHeaderDemo.app */,
+				D446C49E1D65BC91006A1B9C /* ScrollingHeader.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		04D8991B1B99BF4C00C1ED22 /* assets */ = {
-			isa = PBXGroup;
-			children = (
-				04D8991C1B99BF4C00C1ED22 /* Screenshot.gif */,
-			);
-			path = assets;
 			sourceTree = "<group>";
 		};
 		35C909CC905216CA42EE4636 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A75122145E6C268365A80893 /* Pods-MHScrollingHeader.debug.xcconfig */,
-				A7D07FBE247FC8DFBFDBB4F5 /* Pods-MHScrollingHeader.release.xcconfig */,
+				184E5F2054AC027E31C9CEBA /* Pods-ScrollingHeaderDemo.debug.xcconfig */,
+				EAA68688B45C305A3FC5C3BA /* Pods-ScrollingHeaderDemo.release.xcconfig */,
+				388F9BEA6CFB345D5C40A06C /* Pods-ScrollingHeader.debug.xcconfig */,
+				911F20A2E7830F76BAAFB2A6 /* Pods-ScrollingHeader.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -108,33 +100,92 @@
 		CB8E858A3B56CEC8542F7ED0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				13454451544B77437E72B9A3 /* Pods_MHScrollingHeader.framework */,
+				0661E1D4C968E3DF09954089 /* Pods_ScrollingHeaderDemo.framework */,
+				909A6DEB749710C2A9D249A3 /* Pods_ScrollingHeader.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D446C49F1D65BC92006A1B9C /* ScrollingHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D446C4AB1D65BEDB006A1B9C /* MHScrollingHeader.swift */,
+				D446C4A01D65BC92006A1B9C /* ScrollingHeader.h */,
+				D446C4A21D65BC92006A1B9C /* Info.plist */,
+			);
+			path = ScrollingHeader;
+			sourceTree = "<group>";
+		};
+		D48DE4551D65ABDB0074F6AE /* ScrollingHeaderDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D48DE4561D65ABDB0074F6AE /* AppDelegate.swift */,
+				D48DE4581D65ABDB0074F6AE /* RootViewController.swift */,
+				D48DE45D1D65ABDB0074F6AE /* Assets.xcassets */,
+				D48DE45F1D65ABDB0074F6AE /* LaunchScreen.storyboard */,
+				D48DE4621D65ABDB0074F6AE /* Info.plist */,
+				D446C4971D65B993006A1B9C /* MineViewController.swift */,
+				D446C4AD1D65C6E5006A1B9C /* BeltBar.swift */,
+				D446C4AF1D65D215006A1B9C /* PhotosViewController.swift */,
+				D446C4B11D65D27B006A1B9C /* StatusViewController.swift */,
+				D446C4B31D65D507006A1B9C /* ProfileView.swift */,
+			);
+			path = ScrollingHeaderDemo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		D446C49B1D65BC91006A1B9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D446C4A11D65BC92006A1B9C /* ScrollingHeader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		04BC47721B97372E005F8B7E /* MHScrollingHeader */ = {
+		D446C49D1D65BC91006A1B9C /* ScrollingHeader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04BC47961B97372E005F8B7E /* Build configuration list for PBXNativeTarget "MHScrollingHeader" */;
+			buildConfigurationList = D446C4A91D65BC92006A1B9C /* Build configuration list for PBXNativeTarget "ScrollingHeader" */;
 			buildPhases = (
-				DF332A6F4DFCF6E5730B47BE /* [CP] Check Pods Manifest.lock */,
-				04BC476F1B97372E005F8B7E /* Sources */,
-				04BC47701B97372E005F8B7E /* Frameworks */,
-				04BC47711B97372E005F8B7E /* Resources */,
-				AB4EDAD0081FF8378F553763 /* [CP] Embed Pods Frameworks */,
-				E73F895A8C0D753DDB56C0BC /* [CP] Copy Pods Resources */,
-				D4559A351D645C4B00FF0565 /* Swift Lint */,
+				9BF7B084BCB76AFB037A23B1 /* [CP] Check Pods Manifest.lock */,
+				D446C4991D65BC91006A1B9C /* Sources */,
+				D446C49A1D65BC91006A1B9C /* Frameworks */,
+				D446C49B1D65BC91006A1B9C /* Headers */,
+				D446C49C1D65BC91006A1B9C /* Resources */,
+				1004365B0AEF56807AA41760 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MHScrollingHeader;
-			productName = OffsetDemo;
-			productReference = 04BC47731B97372E005F8B7E /* MHScrollingHeader.app */;
+			name = ScrollingHeader;
+			productName = ScrollingHeader;
+			productReference = D446C49E1D65BC91006A1B9C /* ScrollingHeader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D48DE4531D65ABDB0074F6AE /* ScrollingHeaderDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D48DE4631D65ABDB0074F6AE /* Build configuration list for PBXNativeTarget "ScrollingHeaderDemo" */;
+			buildPhases = (
+				6A0FC7FAA930A56CCDED6599 /* [CP] Check Pods Manifest.lock */,
+				D48DE4501D65ABDB0074F6AE /* Sources */,
+				D48DE4511D65ABDB0074F6AE /* Frameworks */,
+				D48DE4521D65ABDB0074F6AE /* Resources */,
+				D446C4961D65B892006A1B9C /* Swift Lint */,
+				DC181AA28FD9AFDF84FD8125 /* [CP] Embed Pods Frameworks */,
+				AAE8D48F9C3D466F1696AE36 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrollingHeaderDemo;
+			productName = ScrollingHeaderDemo;
+			productReference = D48DE4541D65ABDB0074F6AE /* ScrollingHeaderDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -147,8 +198,11 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = mx;
 				TargetAttributes = {
-					04BC47721B97372E005F8B7E = {
-						CreatedOnToolsVersion = 6.3.2;
+					D446C49D1D65BC91006A1B9C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					D48DE4531D65ABDB0074F6AE = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
@@ -165,54 +219,48 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04BC47721B97372E005F8B7E /* MHScrollingHeader */,
+				D48DE4531D65ABDB0074F6AE /* ScrollingHeaderDemo */,
+				D446C49D1D65BC91006A1B9C /* ScrollingHeader */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		04BC47711B97372E005F8B7E /* Resources */ = {
+		D446C49C1D65BC91006A1B9C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D8991D1B99BF4C00C1ED22 /* Screenshot.gif in Resources */,
-				047D98881B9916D9005794D3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D48DE4521D65ABDB0074F6AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D48DE4611D65ABDB0074F6AE /* LaunchScreen.storyboard in Resources */,
+				D48DE45E1D65ABDB0074F6AE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AB4EDAD0081FF8378F553763 /* [CP] Embed Pods Frameworks */ = {
+		1004365B0AEF56807AA41760 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MHScrollingHeader/Pods-MHScrollingHeader-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrollingHeader/Pods-ScrollingHeader-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D4559A351D645C4B00FF0565 /* Swift Lint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Lint";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		DF332A6F4DFCF6E5730B47BE /* [CP] Check Pods Manifest.lock */ = {
+		6A0FC7FAA930A56CCDED6599 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -227,7 +275,22 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E73F895A8C0D753DDB56C0BC /* [CP] Copy Pods Resources */ = {
+		9BF7B084BCB76AFB037A23B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AAE8D48F9C3D466F1696AE36 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,24 +302,75 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MHScrollingHeader/Pods-MHScrollingHeader-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrollingHeaderDemo/Pods-ScrollingHeaderDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D446C4961D65B892006A1B9C /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		DC181AA28FD9AFDF84FD8125 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrollingHeaderDemo/Pods-ScrollingHeaderDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		04BC476F1B97372E005F8B7E /* Sources */ = {
+		D446C4991D65BC91006A1B9C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047D988A1B9916D9005794D3 /* main.m in Sources */,
-				D4AE6C6A1D5DB3DD006B13AA /* MHScrollingHeader.swift in Sources */,
-				047D988C1B9916D9005794D3 /* ViewController.m in Sources */,
-				047D98851B9916D9005794D3 /* AppDelegate.m in Sources */,
+				D446C4AC1D65BEDB006A1B9C /* MHScrollingHeader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D48DE4501D65ABDB0074F6AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D446C4AE1D65C6E5006A1B9C /* BeltBar.swift in Sources */,
+				D48DE4591D65ABDB0074F6AE /* RootViewController.swift in Sources */,
+				D48DE4571D65ABDB0074F6AE /* AppDelegate.swift in Sources */,
+				D446C4981D65B993006A1B9C /* MineViewController.swift in Sources */,
+				D446C4B21D65D27B006A1B9C /* StatusViewController.swift in Sources */,
+				D446C4B41D65D507006A1B9C /* ProfileView.swift in Sources */,
+				D446C4B01D65D215006A1B9C /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D48DE45F1D65ABDB0074F6AE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D48DE4601D65ABDB0074F6AE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		04BC47941B97372E005F8B7E /* Debug */ = {
@@ -340,36 +454,83 @@
 			};
 			name = Release;
 		};
-		04BC47971B97372E005F8B7E /* Debug */ = {
+		D446C4A71D65BC92006A1B9C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A75122145E6C268365A80893 /* Pods-MHScrollingHeader.debug.xcconfig */;
+			baseConfigurationReference = 388F9BEA6CFB345D5C40A06C /* Pods-ScrollingHeader.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ScrollingHeader/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mickeysha.ScrollingHeader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D446C4A81D65BC92006A1B9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 911F20A2E7830F76BAAFB2A6 /* Pods-ScrollingHeader.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ScrollingHeader/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mickeysha.ScrollingHeader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D48DE4641D65ABDB0074F6AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 184E5F2054AC027E31C9CEBA /* Pods-ScrollingHeaderDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/MHScrollHeader/Info.plist";
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = ScrollingHeaderDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mickeysha.MHScrollingHeader;
-				PRODUCT_NAME = MHScrollingHeader;
-				SWIFT_OBJC_BRIDGING_HEADER = "MHScrollHeader/ScrollingHeader/MHScrollingHeader-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mickeysha.ScrollingHeaderDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		04BC47981B97372E005F8B7E /* Release */ = {
+		D48DE4651D65ABDB0074F6AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7D07FBE247FC8DFBFDBB4F5 /* Pods-MHScrollingHeader.release.xcconfig */;
+			baseConfigurationReference = EAA68688B45C305A3FC5C3BA /* Pods-ScrollingHeaderDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/MHScrollHeader/Info.plist";
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = ScrollingHeaderDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mickeysha.MHScrollingHeader;
-				PRODUCT_NAME = MHScrollingHeader;
-				SWIFT_OBJC_BRIDGING_HEADER = "MHScrollHeader/ScrollingHeader/MHScrollingHeader-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mickeysha.ScrollingHeaderDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -385,11 +546,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04BC47961B97372E005F8B7E /* Build configuration list for PBXNativeTarget "MHScrollingHeader" */ = {
+		D446C4A91D65BC92006A1B9C /* Build configuration list for PBXNativeTarget "ScrollingHeader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04BC47971B97372E005F8B7E /* Debug */,
-				04BC47981B97372E005F8B7E /* Release */,
+				D446C4A71D65BC92006A1B9C /* Debug */,
+				D446C4A81D65BC92006A1B9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D48DE4631D65ABDB0074F6AE /* Build configuration list for PBXNativeTarget "ScrollingHeaderDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48DE4641D65ABDB0074F6AE /* Debug */,
+				D48DE4651D65ABDB0074F6AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
