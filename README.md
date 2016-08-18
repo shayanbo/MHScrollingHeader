@@ -1,6 +1,7 @@
 # MHScrollingHeader
 An Easy Way to Intergate Scrolling Header
 
+[![Travis](https://img.shields.io/travis/MickeyHub/MHScrollingHeader.svg?maxAge=2592000)]()
 [![CocoaPods](http://img.shields.io/cocoapods/v/MHScrollingHeader.svg?style=flat)](http://www.cocoapods.org/?q=mhscrollingheader)
 [![CocoaPods](http://img.shields.io/cocoapods/l/MHScrollingHeader.svg?style=flat)](http://www.cocoapods.org/?q=mhscrollingheader)
 [![CocoaPods](http://img.shields.io/cocoapods/p/MHScrollingHeader.svg?style=flat)](http://www.cocoapods.org/?q=mhscrollingheader)
