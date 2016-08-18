@@ -12,36 +12,35 @@ import UIKit
 
 private var scrollViewContentOffPoint = NSNull()
 public extension UIViewController {
-    
+
     func scrollHeaderSetup(
         scrollViews: [UIScrollView],
         contentOffset: CGFloat,
         topConstraint: NSLayoutConstraint,
         flexibleViewHeight: CGFloat
-    ){
-        
+    ) {
+
         mScrollViews = scrollViews
         mContentOffset = contentOffset
         mTopConstraint = topConstraint
         mFlexibleViewHeight = flexibleViewHeight
-        
+
         var observers: [FBKVOController] = []
         var lastContentOffsets: [UIScrollView: CGFloat] = [:]
         for scrollView in scrollViews {
-            scrollView.contentInset = UIEdgeInsetsMake(contentOffset, 0, 0, 0)
+            scrollView.contentInset = UIEdgeInsets(top: contentOffset, left: 0, bottom: 0, right: 0)
             scrollView.scrollIndicatorInsets = scrollView.contentInset
-            scrollView.contentOffset = CGPointMake(0, -contentOffset)
+            scrollView.contentOffset = CGPoint(x: 0, y: -contentOffset)
             lastContentOffsets[scrollView] = -contentOffset
-            
+
             let observer = FBKVOController(observer: self)
             observers.append(observer)
             observer.observe(
                 scrollView,
                 keyPath: "contentOffset",
                 options: [.Old, .New],
-                block:
-            { [unowned self] (_, _, _) in
-                
+                block: { [unowned self] (_, _, _) in
+
                 if scrollView.tracking {
                     self.mActiveScrollView = scrollView
                 }
@@ -56,16 +55,16 @@ public extension UIViewController {
 }
 
 private extension UIViewController {
-    
+
     func scroll(activeScrollView: UIScrollView) {
-    
+
         let currentContentOffsetY = activeScrollView.contentOffset.y
-        
+
         if currentContentOffsetY < -mContentOffset ||
-            currentContentOffsetY + CGRectGetHeight(activeScrollView.frame) > activeScrollView.contentSize.height {
+            currentContentOffsetY + activeScrollView.frame.height > activeScrollView.contentSize.height {
             return
         }
-        
+
         let delta = currentContentOffsetY - mLastContentOffsets[activeScrollView]!
         let scrollUp = delta > 0
         if scrollUp {
@@ -85,7 +84,7 @@ private extension UIViewController {
         }
         mLastContentOffsets[activeScrollView] = currentContentOffsetY
     }
-    
+
     func adjustOtherScrollViews(activeScrollView: UIScrollView) {
 
         let index = mScrollViews.indexOf(activeScrollView)!
@@ -95,7 +94,7 @@ private extension UIViewController {
         for scrollView in scrollViews {
             let delta = activeScrollView.contentOffset.y - mLastContentOffsets[activeScrollView]!
             mLastContentOffsets[scrollView] = mLastContentOffsets[scrollView]! + delta
-            scrollView.contentOffset = CGPointMake(0, mLastContentOffsets[scrollView]!)
+            scrollView.contentOffset = CGPoint(x:0, y:mLastContentOffsets[scrollView]!)
         }
     }
 }
@@ -110,39 +109,39 @@ private var activeScrollViewPointer = NSNull()
 private var observersPointer = NSNull()
 
 private extension UIViewController {
-    
+
     var mObservers: [FBKVOController]! {
-        get{return objc_getAssociatedObject(self, &observersPointer) as? [FBKVOController]}
-        set{objc_setAssociatedObject(self, &observersPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
+        get {return objc_getAssociatedObject(self, &observersPointer) as? [FBKVOController]}
+        set {objc_setAssociatedObject(self, &observersPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
     }
-    
+
     var mTopConstraint: NSLayoutConstraint! {
-        get{return objc_getAssociatedObject(self, &topConstraintPointer) as? NSLayoutConstraint}
-        set{objc_setAssociatedObject(self, &topConstraintPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
+        get {return objc_getAssociatedObject(self, &topConstraintPointer) as? NSLayoutConstraint}
+        set {objc_setAssociatedObject(self, &topConstraintPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
     }
-    
+
     var mScrollViews: [UIScrollView]! {
-        get{return objc_getAssociatedObject(self, &scrollViewsPointer) as? [UIScrollView]}
-        set{objc_setAssociatedObject(self, &scrollViewsPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
+        get {return objc_getAssociatedObject(self, &scrollViewsPointer) as? [UIScrollView]}
+        set {objc_setAssociatedObject(self, &scrollViewsPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
     }
-    
+
     var mActiveScrollView: UIScrollView! {
-        get{return objc_getAssociatedObject(self, &activeScrollViewPointer) as? UIScrollView}
-        set{objc_setAssociatedObject(self, &activeScrollViewPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
+        get {return objc_getAssociatedObject(self, &activeScrollViewPointer) as? UIScrollView}
+        set {objc_setAssociatedObject(self, &activeScrollViewPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
     }
-    
+
     var mContentOffset: CGFloat! {
-        get{return objc_getAssociatedObject(self, &contentOffsetPointer) as? CGFloat}
-        set{objc_setAssociatedObject(self, &contentOffsetPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
+        get {return objc_getAssociatedObject(self, &contentOffsetPointer) as? CGFloat}
+        set {objc_setAssociatedObject(self, &contentOffsetPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
     }
-    
+
     var mFlexibleViewHeight: CGFloat! {
-        get{return objc_getAssociatedObject(self, &flexibleViewHeightPointer) as? CGFloat}
-        set{objc_setAssociatedObject(self, &flexibleViewHeightPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
+        get {return objc_getAssociatedObject(self, &flexibleViewHeightPointer) as? CGFloat}
+        set {objc_setAssociatedObject(self, &flexibleViewHeightPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
     }
-    
+
     var mLastContentOffsets: [UIScrollView: CGFloat]! {
-        get{return objc_getAssociatedObject(self, &lastContentOffsetPointer) as? [UIScrollView: CGFloat]}
-        set{objc_setAssociatedObject(self, &lastContentOffsetPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
+        get {return objc_getAssociatedObject(self, &lastContentOffsetPointer) as? [UIScrollView: CGFloat]}
+        set {objc_setAssociatedObject(self, &lastContentOffsetPointer, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
     }
 }

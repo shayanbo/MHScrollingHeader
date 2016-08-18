@@ -126,6 +126,7 @@
 				04BC47711B97372E005F8B7E /* Resources */,
 				AB4EDAD0081FF8378F553763 /* [CP] Embed Pods Frameworks */,
 				E73F895A8C0D753DDB56C0BC /* [CP] Copy Pods Resources */,
+				D4559A351D645C4B00FF0565 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -196,6 +197,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MHScrollingHeader/Pods-MHScrollingHeader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D4559A351D645C4B00FF0565 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		DF332A6F4DFCF6E5730B47BE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
