@@ -13,7 +13,7 @@ class MineViewController: UIViewController {
 
     private lazy var headContainer = UIView()
     private lazy var beltBar = BeltBar(frame: CGRect())
-    private lazy var profileView = ProfileView()
+    private lazy var profileView = ProfileView(frame: CGRect())
     
     override func viewDidLoad() {
         
@@ -35,7 +35,16 @@ class MineViewController: UIViewController {
     
     private func setupUI() {
         
+        view.addSubview(headContainer)
+        headContainer.addSubview(profileView)
+        headContainer.addSubview(beltBar)
+    }
+    
+    override func updateViewConstraints() {
         
+        headContainer.
+        
+        super.updateViewConstraints()
     }
 }
 
