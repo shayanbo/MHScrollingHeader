@@ -13,6 +13,20 @@ import UIKit
 private var scrollViewContentOffPoint = NSNull()
 public extension UIViewController {
 
+    /**
+     
+     The __only__ function exposed to developer
+     
+     - Author: [MickeySha](https://github.com/MickeyHub)
+     - important: 
+     `contentOffset` should be header's height, and the header's height should contain the `flexibleViewHeight`
+     - precondition: all the parameters can not be nil if called from OC.
+     
+     - parameter scrollViews:        all scrollviews which has the same demand
+     - parameter contentOffset:      contentOffset for all scrollViews to show
+     - parameter topConstraint:      the header's top constraint to superview
+     - parameter flexibleViewHeight: remain area when scroll up
+     */
     func scrollHeaderSetup(
         scrollViews: [UIScrollView],
         contentOffset: CGFloat,
