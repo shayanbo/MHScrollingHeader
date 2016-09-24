@@ -1,4 +1,6 @@
 # MHScrollingHeader
+
+[![Join the chat at https://gitter.im/MickeyHub/MHScrollingHeader](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MickeyHub/MHScrollingHeader?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 An Easy Way to Intergate Scrolling Header
 
 [![Travis](https://img.shields.io/travis/MickeyHub/MHScrollingHeader.svg?maxAge=2592000)]()
