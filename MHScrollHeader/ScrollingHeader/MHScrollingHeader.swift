@@ -76,6 +76,11 @@ private extension UIViewController {
 
         if currentContentOffsetY < -mContentOffset ||
             currentContentOffsetY + activeScrollView.frame.height > activeScrollView.contentSize.height {
+            // move default offset
+            if currentContentOffsetY < -mContentOffset {
+                mTopConstraint.constant = 0
+                mLastContentOffsets[activeScrollView] = currentContentOffsetY
+            }
             return
         }
 
