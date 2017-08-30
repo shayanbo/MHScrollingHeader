@@ -28,7 +28,7 @@ public extension UIViewController {
      - parameter flexibleViewHeight: remain area when scroll up
      */
     func scrollHeaderSetup(
-        scrollViews: [UIScrollView],
+        _ scrollViews: [UIScrollView],
         contentOffset: CGFloat,
         topConstraint: NSLayoutConstraint,
         flexibleViewHeight: CGFloat
@@ -52,10 +52,10 @@ public extension UIViewController {
             observer.observe(
                 scrollView,
                 keyPath: "contentOffset",
-                options: [.Old, .New],
+                options: [.old, .new],
                 block: { [unowned self] (_, _, _) in
 
-                if scrollView.tracking {
+                if scrollView.isTracking {
                     self.mActiveScrollView = scrollView
                 }
                 if scrollView === self.mActiveScrollView {
@@ -70,7 +70,7 @@ public extension UIViewController {
 
 private extension UIViewController {
 
-    func scroll(activeScrollView: UIScrollView) {
+    func scroll(_ activeScrollView: UIScrollView) {
 
         let currentContentOffsetY = activeScrollView.contentOffset.y
 
@@ -104,11 +104,11 @@ private extension UIViewController {
         mLastContentOffsets[activeScrollView] = currentContentOffsetY
     }
 
-    func adjustOtherScrollViews(activeScrollView: UIScrollView) {
+    func adjustOtherScrollViews(_ activeScrollView: UIScrollView) {
 
-        let index = mScrollViews.indexOf(activeScrollView)!
-        mScrollViews.removeAtIndex(index)
-        mScrollViews.insert(activeScrollView, atIndex: 0)
+        let index = mScrollViews.index(of: activeScrollView)!
+        mScrollViews.remove(at: index)
+        mScrollViews.insert(activeScrollView, at: 0)
         let scrollViews = mScrollViews.dropFirst()
         for scrollView in scrollViews {
             let delta = activeScrollView.contentOffset.y - mLastContentOffsets[activeScrollView]!
